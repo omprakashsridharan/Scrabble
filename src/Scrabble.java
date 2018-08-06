@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Scrabble {
 
@@ -47,7 +48,7 @@ public class Scrabble {
             ArrayList<String> wordList = hashMap.get(i);
             if(wordList != null){
                 for(String s: wordList){
-                    if(isValidWord(s)){
+                    if(isValidWord(rack,s)){
                         int score = computeScore(s);
                         if(score > maxScore){
                             maxScore = score;
@@ -66,9 +67,9 @@ public class Scrabble {
 
     }
 
-    boolean isValidWord(String s){
+    boolean isValidWord(char[] r,String s){
         boolean[] isvalid = new boolean[Character.MAX_VALUE + 1];
-        for (char c : rack) {
+        for (char c : r) {
             isvalid[c] = true;
         }
         for (char c: s.toCharArray()){
@@ -116,20 +117,34 @@ public class Scrabble {
         return count==s.length()-1;
     }
 
-    public void computeScenarioThree(Map<Character,Integer> constraintMap){
+    public void computeScenarioThree(char c1,char c2,int distance){
         int maxScore = 0;
         scenarioThreeMap = new TreeMap<>();
         ArrayList<Integer> keys = new ArrayList<Integer>(scenarioOneMap.keySet());
         for(int i=keys.size()-1; i>=0;i--){
             ArrayList<String> arrayList = scenarioOneMap.get(keys.get(i));
             for(String s: arrayList){
-                if(hasSatisfiedConstraints(s,constraintMap)){
-                    int score = computeScore(s);
-                    if(score > maxScore){
-                        maxScore = score;
-                    }
-                    PopulateMap(s, score, scenarioThreeMap);
+                List<Character> cList = new ArrayList<Character>();
+                for(char ch : rack){
+                    cList.add(ch);
                 }
+                cList.add(c1);
+                cList.add(c2);
+                StringBuilder sb = new StringBuilder();
+                for(Character ch: cList){
+                    sb.append(ch);
+                }
+                String str = sb.toString();
+                if(isValidWord(str.toCharArray(),s)){
+                    if(hasSatisfiedConstraints(s,c1,c2,distance)){
+                        int score = computeScore(s);
+                        if(score > maxScore){
+                            maxScore = score;
+                        }
+                        PopulateMap(s, score, scenarioThreeMap);
+                    }
+                }
+
             }
         }
 
@@ -142,17 +157,9 @@ public class Scrabble {
 
     }
 
-    private boolean hasSatisfiedConstraints(String s,Map map) {
-        Iterator<Map.Entry<Character, Integer>> itr = map.entrySet().iterator();
-
-        while(itr.hasNext())
-        {
-            Map.Entry<Character, Integer> entry = itr.next();
-            if(s.indexOf(entry.getKey()) != entry.getValue()){
-                return false;
-            }
-        }
-        return true;
+    private boolean hasSatisfiedConstraints(String s,char c1,char c2,int distance) {
+        String temp =".*"+c1+".*"+c2+".*";
+        return Pattern.matches(temp,s);
     }
 
     private void PopulateMap(String s, int score, TreeMap<Integer, ArrayList<String>> scenarioTwoMap) {

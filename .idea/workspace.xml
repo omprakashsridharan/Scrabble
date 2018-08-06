@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="470e7e77-a92e-44d5-bbc6-a41c345a995d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scrabble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scrabble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution.java" afterDir="false" />
     </list>
@@ -18,8 +19,8 @@
       <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="285">
+              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -27,11 +28,13 @@
       <file leaf-file-name="Scrabble.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Scrabble.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="136" column="74" selection-start-line="136" selection-start-column="74" selection-end-line="136" selection-end-column="74" />
+            <state relative-caret-position="310">
+              <caret line="164" column="20" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1435#1444#0" expanded="true" />
                 <element signature="e#2565#2574#0" expanded="true" />
+                <element signature="e#3909#3920#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,12 +191,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533543759080</updated>
       <workItem from="1533544026906" duration="3628000" />
-      <workItem from="1533549998764" duration="3909000" />
+      <workItem from="1533549998764" duration="6258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8513000" />
+    <option name="totallyTimeSpent" value="10862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -220,7 +223,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39937106" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39937106" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -269,30 +272,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Scrabble.java</url>
-          <line>102</line>
+          <line>137</line>
           <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Scrabble.java</url>
-          <line>96</line>
+          <line>138</line>
           <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Scrabble.java</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Scrabble.java</url>
-          <line>88</line>
-          <properties />
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="28" />
+      <option name="time" value="43" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -308,8 +299,10 @@
         <state relative-caret-position="1140">
           <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1435#1444#0" expanded="true" />
             <element signature="e#2565#2574#0" expanded="true" />
+            <element signature="e#3909#3920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -319,8 +312,10 @@
         <state relative-caret-position="447">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1435#1444#0" expanded="true" />
             <element signature="e#2565#2574#0" expanded="true" />
+            <element signature="e#3909#3920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -337,8 +332,10 @@
         <state relative-caret-position="171">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1435#1444#0" expanded="true" />
             <element signature="e#2565#2574#0" expanded="true" />
+            <element signature="e#3909#3920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -371,8 +368,10 @@
         <state relative-caret-position="89">
           <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1435#1444#0" expanded="true" />
             <element signature="e#2565#2574#0" expanded="true" />
+            <element signature="e#3909#3920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -409,18 +408,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Scrabble.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="136" column="74" selection-start-line="136" selection-start-column="74" selection-end-line="136" selection-end-column="74" />
+        <state relative-caret-position="310">
+          <caret line="164" column="20" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1435#1444#0" expanded="true" />
             <element signature="e#2565#2574#0" expanded="true" />
+            <element signature="e#3909#3920#0" expanded="true" />
           </folding>
         </state>
       </provider>

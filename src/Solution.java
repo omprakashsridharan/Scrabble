@@ -19,10 +19,7 @@ public class Solution {
 
         scrabble.computeScenarioTwo();
 
-        Map<Character,Integer> map = new HashMap<>();
-        map.put('A',0);
-
-        scrabble.computeScenarioThree(map);
+        scrabble.computeScenarioThree('W','E',2);
     }
 
     private static void readFromFile() throws IOException {
