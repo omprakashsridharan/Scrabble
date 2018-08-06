@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Solution {
@@ -11,12 +12,17 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         readFromFile();
-        Scrabble scrabble = new Scrabble("ABCDEG",hashMap);
-      //  System.out.println(scrabble.constructTreeMap().toString());
+
+        Scrabble scrabble = new Scrabble("ABCDEFG",hashMap);
+
         scrabble.computeScenarioOne();
-        TreeMap treeMap = scrabble.getScoreMap();
-        System.out.println(treeMap.get(treeMap.size()).toString());
+
         scrabble.computeScenarioTwo();
+
+        Map<Character,Integer> map = new HashMap<>();
+        map.put('A',0);
+
+        scrabble.computeScenarioThree(map);
     }
 
     private static void readFromFile() throws IOException {
