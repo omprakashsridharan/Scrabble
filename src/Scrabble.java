@@ -6,6 +6,7 @@ public class Scrabble {
     HashMap<String,Integer> scores = new HashMap<>();
     HashMap<Integer,ArrayList<String>> hashMap;
     TreeMap<Integer,ArrayList<String>> scoreMap;
+    TreeMap<Integer,ArrayList<String>> scenarioTwoMap;
 
     public Scrabble(String rack,HashMap<Integer,ArrayList<String>> hs) {
         this.rack = rack.toCharArray();
@@ -46,6 +47,40 @@ public class Scrabble {
         this.rack = rack;
     }
 
+    public void computeScenarioTwo(){
+        scenarioTwoMap = new TreeMap<>();
+        ArrayList<Integer> keys = new ArrayList<Integer>(scoreMap.keySet());
+        for(int i=keys.size()-1; i>=0;i--){
+            ArrayList<String> arrayList = scoreMap.get(keys.get(i));
+            for(String s: arrayList){
+                if(isAdjacent(s)){
+                    int score = computeScore(s);
+                    if(scenarioTwoMap.get(score) != null){
+                        ArrayList<String> a = scenarioTwoMap.get(score);
+                        a.add(s);
+                        scenarioTwoMap.put(score,a);
+                    }else {
+                        ArrayList<String> a = new ArrayList<>();
+                        a.add(s);
+                        scenarioTwoMap.put(score,a);
+                    }
+                }
+            }
+        }
+        System.out.println(scenarioTwoMap.get(scenarioTwoMap.size()).toString());
+
+    }
+
+    private boolean isAdjacent(String s) {
+        int count = 0;
+        for (char c: rack){
+            if(s.contains(""+c)){
+                count++;
+            }
+        }
+        return count==s.length()-1;
+    }
+
     public void computeScenarioOne(){
         scoreMap = new TreeMap<>();
         Iterator iterator = hashMap.entrySet().iterator();
@@ -69,6 +104,37 @@ public class Scrabble {
             }
         }
 
+
+    }
+
+    public TreeMap<Integer, ArrayList<String>> getScoreMap() {
+        return scoreMap;
+    }
+
+    public  TreeMap<Integer,ArrayList<String>> constructTreeMap()
+    {
+        Integer[] scores=new Integer[]{1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+        TreeMap<Integer,ArrayList<String>> scorePlate = new TreeMap<Integer, ArrayList<String>>();
+
+        for (Integer key : hashMap.keySet())
+        {
+            for(int i=0;i<hashMap.get(key).size();i++)
+            {
+                int score=0;
+                String word= hashMap.get(key).get(i);
+                for(int j=0;j<word.length();j++)
+                {
+                    score=scores[word.charAt(j)-'A']+score;
+                }
+                if(!scorePlate.containsKey(score))
+                {
+                    scorePlate.put(score,new ArrayList<String>());
+                }
+                scorePlate.get(score).add(word);
+            }
+        }
+        System.out.print(scorePlate);
+        return scorePlate;
     }
 
     private int computeScore(String s) {
