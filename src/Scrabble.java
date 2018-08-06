@@ -46,7 +46,7 @@ public class Scrabble {
         this.rack = rack;
     }
 
-    public void computeScoreMap(){
+    public void computeScenarioOne(){
         scoreMap = new TreeMap<>();
         Iterator iterator = hashMap.entrySet().iterator();
         for(int i=1;i<8;i++){
@@ -68,7 +68,7 @@ public class Scrabble {
                 }
             }
         }
-        System.out.println(scoreMap.get(scoreMap.size()).toString());
+
     }
 
     private int computeScore(String s) {

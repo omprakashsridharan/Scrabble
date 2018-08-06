@@ -10,8 +10,6 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         readFromFile();
-        Scrabble scrabble = new Scrabble("ABCDEF",hashMap);
-        scrabble.computeScoreMap();
     }
 
     private static void readFromFile() throws IOException {
