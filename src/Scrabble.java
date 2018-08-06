@@ -41,20 +41,28 @@ public class Scrabble {
     }
 
     public void computeScenarioOne(){
+        int maxScore = 0;
         scenarioOneMap = new TreeMap<>();
-        Iterator iterator = hashMap.entrySet().iterator();
         for(int i=1;i<8;i++){
             ArrayList<String> wordList = hashMap.get(i);
             if(wordList != null){
                 for(String s: wordList){
                     if(isValidWord(s)){
                         int score = computeScore(s);
+                        if(score > maxScore){
+                            maxScore = score;
+                        }
                         PopulateMap(s, score, scenarioOneMap);
                     }
                 }
             }
         }
-        System.out.println(scenarioOneMap.get(scenarioOneMap.size()).toString());
+        if(scenarioOneMap != null && scenarioOneMap.size() != 0){
+            System.out.println(scenarioOneMap.get(maxScore).toString());
+        }else {
+            System.out.println("No words");
+        }
+
 
     }
 
@@ -66,24 +74,35 @@ public class Scrabble {
         for (char c: s.toCharArray()){
             if(!isvalid[c]){
                 return false;
+            }else {
+                isvalid[c] = false;
             }
         }
         return true;
     }
 
     public void computeScenarioTwo(){
+        int maxScore = 0;
         scenarioTwoMap = new TreeMap<>();
         ArrayList<Integer> keys = new ArrayList<Integer>(scenarioOneMap.keySet());
         for(int i=keys.size()-1; i>=0;i--){
             ArrayList<String> arrayList = scenarioOneMap.get(keys.get(i));
             for(String s: arrayList){
                 if(isAdjacent(s)){
+
                     int score = computeScore(s);
+                    if(score > maxScore){
+                        maxScore = score;
+                    }
                     PopulateMap(s, score, scenarioTwoMap);
                 }
             }
         }
-        System.out.println(scenarioTwoMap.get(scenarioTwoMap.size()).toString());
+        if(scenarioTwoMap != null && scenarioTwoMap.size() != 0){
+            System.out.println(scenarioTwoMap.get(maxScore).toString());
+        } else {
+            System.out.println("No word found");
+        }
 
     }
 
@@ -98,6 +117,7 @@ public class Scrabble {
     }
 
     public void computeScenarioThree(Map<Character,Integer> constraintMap){
+        int maxScore = 0;
         scenarioThreeMap = new TreeMap<>();
         ArrayList<Integer> keys = new ArrayList<Integer>(scenarioOneMap.keySet());
         for(int i=keys.size()-1; i>=0;i--){
@@ -105,11 +125,20 @@ public class Scrabble {
             for(String s: arrayList){
                 if(hasSatisfiedConstraints(s,constraintMap)){
                     int score = computeScore(s);
+                    if(score > maxScore){
+                        maxScore = score;
+                    }
                     PopulateMap(s, score, scenarioThreeMap);
                 }
             }
         }
-        System.out.println(scenarioThreeMap.get(scenarioThreeMap.size()).toString());
+
+        if(scenarioThreeMap != null && scenarioThreeMap.size() != 0){
+            System.out.println(scenarioThreeMap.get(maxScore).toString());
+        } else {
+            System.out.println("No word found");
+        }
+
 
     }
 

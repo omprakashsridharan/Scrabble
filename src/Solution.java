@@ -13,7 +13,7 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         readFromFile();
 
-        Scrabble scrabble = new Scrabble("ABCDEFG",hashMap);
+        Scrabble scrabble = new Scrabble("AZEARVW",hashMap);
 
         scrabble.computeScenarioOne();
 
