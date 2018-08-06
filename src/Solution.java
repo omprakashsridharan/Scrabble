@@ -13,13 +13,13 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         readFromFile();
 
-        Scrabble scrabble = new Scrabble("AZEARVW",hashMap);
+        Scrabble scrabble = new Scrabble("ABCDEFG",hashMap);
 
         scrabble.computeScenarioOne();
 
         scrabble.computeScenarioTwo();
 
-        scrabble.computeScenarioThree('W','E',2);
+        scrabble.computeScenarioThree('F','C',1);
     }
 
     private static void readFromFile() throws IOException {

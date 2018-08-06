@@ -158,7 +158,11 @@ public class Scrabble {
     }
 
     private boolean hasSatisfiedConstraints(String s,char c1,char c2,int distance) {
-        String temp =".*"+c1+".*"+c2+".*";
+        String temp =".*"+c1+"";
+        for(int i=0;i<distance;i++){
+            temp+=".";
+        }
+        temp+=c2+".*";
         return Pattern.matches(temp,s);
     }
 
